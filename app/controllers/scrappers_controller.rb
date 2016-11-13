@@ -13,7 +13,7 @@ class ScrappersController < ApplicationController
   end
   
   def search
-    @products = Product.where("title LIKE ?", "%#{params[:search]}%")
+    @products = Product.where("title ILIKE ?", "%#{params[:search]}%")
     render "scrappers/search"
   end
   

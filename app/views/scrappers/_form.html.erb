@@ -1,0 +1,23 @@
+<%= form_for(@scrapper) do |f| %>
+  <% if @scrapper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scrapper.errors.count, "error") %> prohibited this scrapper from being saved:</h2>
+
+      <ul>
+      <% @scrapper.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <form>
+  <div class="form-group">
+    <%= f.label :url %> <h5>Enter only Amazon.in url for ex:</h5><h4> "http://www.amazon.in/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=xbox&rh=i%3Aaps%2Ck%3Axbox" </h4><br>
+    <%= f.text_field :url %>
+  </div>
+  </form>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

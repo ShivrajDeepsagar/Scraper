@@ -1,0 +1,27 @@
+
+<h1>Listing Scrapers</h1>
+
+<table class= "table table-hover">
+  <thead>
+    <tr class="warning">
+      <th>Url</th>
+      <th>Action</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scrappers.each do |scrapper| %>
+      <tr>
+        <td><%= scrapper.url %></td>
+        <td><%= link_to 'Crawl', scrapper %></td>
+        <td><%= link_to 'Delete', scrapper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+<%= link_to 'New Scrapper', new_scrapper_path %>
